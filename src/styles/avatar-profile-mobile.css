@@ -1,0 +1,184 @@
+/* Avatar Profile Mobile Optimizations */
+
+/* Reduce motion for profile animations */
+@media (prefers-reduced-motion: reduce) {
+  .avatar-profile .motion-div {
+    transform: none !important;
+    transition: opacity 0.2s ease !important;
+  }
+  
+  .avatar-profile .hero-slider {
+    transition: opacity 0.2s ease !important;
+  }
+  
+  .avatar-profile .portfolio-item {
+    transform: none !important;
+  }
+}
+
+/* Content visibility for portfolio sections */
+.avatar-profile .portfolio-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 600px;
+}
+
+/* Enhanced focus for profile navigation */
+.avatar-profile .hero-nav-btn:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
+}
+
+.avatar-profile .hero-indicator:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
+}
+
+/* Optimized grid for mobile */
+@media (max-width: 640px) {
+  .avatar-profile .facts-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .avatar-profile .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .avatar-profile .facts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .avatar-profile .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Better text reading on mobile */
+.avatar-profile .bio-text {
+  hyphens: auto;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Hero section optimizations */
+.avatar-profile .hero-content {
+  backdrop-filter: blur(2px);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    transparent 100%
+  );
+}
+
+/* Portfolio image loading states */
+.avatar-profile .portfolio-image {
+  background: linear-gradient(
+    45deg,
+    hsl(var(--muted)) 25%,
+    transparent 25%,
+    transparent 75%,
+    hsl(var(--muted)) 75%
+  );
+  background-size: 16px 16px;
+  animation: skeleton-loading 1s linear infinite;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 16px 16px;
+  }
+}
+
+/* Scroll behavior for profile sections */
+.avatar-profile section {
+  scroll-margin-top: 5rem;
+}
+
+/* Touch optimization for sliders */
+.avatar-profile .hero-slider {
+  touch-action: pan-y;
+}
+
+.avatar-profile .portfolio-grid {
+  touch-action: pan-y;
+}
+
+/* High contrast mode improvements */
+@media (prefers-contrast: high) {
+  .avatar-profile .hero-nav-btn {
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: #000 !important;
+  }
+  
+  .avatar-profile .hero-indicator {
+    background: rgba(255, 255, 255, 0.9) !important;
+  }
+  
+  .avatar-profile .hero-indicator[aria-current="true"] {
+    background: #fff !important;
+  }
+}
+
+/* Loading optimization for hero images */
+.avatar-profile .hero-image {
+  background: hsl(var(--muted));
+  transition: opacity 0.3s ease;
+}
+
+.avatar-profile .hero-image[data-loaded="true"] {
+  opacity: 1;
+}
+
+.avatar-profile .hero-image[data-loaded="false"] {
+  opacity: 0;
+}
+
+/* Better spacing for mobile facts */
+@media (max-width: 480px) {
+  .avatar-profile .fact-item {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: hsl(var(--accent) / 0.05);
+  }
+}
+
+/* Portfolio hover optimizations for touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .avatar-profile .portfolio-item:hover {
+    transform: none;
+  }
+  
+  .avatar-profile .portfolio-item img {
+    transition: none;
+  }
+}
+
+/* Ensure minimum contrast for text over images */
+.avatar-profile .text-over-image {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Better typography rhythm */
+.avatar-profile .content-section {
+  line-height: 1.6;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+/* Optimize for small screens */
+@media (max-width: 375px) {
+  .avatar-profile .hero-title {
+    letter-spacing: 0.05em;
+  }
+  
+  .avatar-profile .section-title {
+    letter-spacing: 0.05em;
+  }
+}
+

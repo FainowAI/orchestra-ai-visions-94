@@ -1,0 +1,283 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mobile-first optimizations */
+@import './styles/mobile-optimizations.css';
+@import './styles/avatar-profile-mobile.css';
+
+/* Orchestra Design System - Luxury AI Avatar Agency
+Inspired by high-end fashion and luxury brands
+*/
+
+@layer base {
+  :root {
+    /* Orchestra Quem Somos - Premium Colors */
+    --background: 0 0% 96%; /* #F5F5F5 - quase branco */
+    --foreground: 0 0% 4%; /* #0B0B0B - preto */
+    --black: 0 0% 4%; /* #0B0B0B */
+    --white: 0 0% 96%; /* #F5F5F5 */
+
+    /* Orchestra Golden Accent */
+    --orchestra-gold: 45 71% 45%; /* #C9A227 - dourado metálico */
+    --orchestra-gradient: linear-gradient(135deg, hsl(45 71% 45%), hsl(48 80% 50%));
+
+    /* Semantic Colors */
+    --primary: 0 0% 4%; /* Preto para texto principal */
+    --primary-foreground: 0 0% 96%;
+
+    --secondary: 0 0% 97%; /* Off-white */
+    --secondary-foreground: 0 0% 5%;
+
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 35%; /* Improved contrast for light mode */
+
+    --accent: 37 89% 58%; /* Orchestra gold */
+    --accent-foreground: 0 0% 5%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 5%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 5%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 95%;
+    --ring: 37 89% 58%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Orchestra Dark Theme - Premium Black */
+    --background: 0 0% 4%; /* #0B0B0B - preto profundo */
+    --foreground: 0 0% 96%; /* #F5F5F5 - quase branco */
+    --black: 0 0% 4%; /* #0B0B0B */
+    --white: 0 0% 4%; /* #0B0B0B */
+
+    --card: 220 13% 10%; /* Slightly lighter than background */
+    --card-foreground: 0 0% 95%;
+
+    --popover: 220 13% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 0% 95%; /* White text for primary */
+    --primary-foreground: 220 13% 8%;
+
+    --secondary: 220 13% 15%; /* Darker gray */
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 220 13% 15%;
+    --muted-foreground: 0 0% 75%; /* Improved contrast for muted text */
+
+    --accent: 45 71% 45%; /* #C9A227 - dourado metálico */
+    --accent-foreground: 220 13% 8%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 220 13% 20%; /* Subtle borders */
+    --input: 220 13% 15%;
+    --ring: 37 89% 58%; /* Golden focus ring */
+    
+    --sidebar-background: 220 13% 6%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 37 89% 58%;
+    --sidebar-primary-foreground: 220 13% 8%;
+    --sidebar-accent: 220 13% 18%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 220 13% 20%;
+    --sidebar-ring: 37 89% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Montserrat', 'Futura', 'Futura PT', 'Futura Std', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.025em;
+  }
+
+  /* Futura typography classes */
+  .font-futura {
+    font-family: 'Montserrat', 'Futura', 'Futura PT', 'Futura Std', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+
+  .font-futura-light {
+    font-family: 'Montserrat', 'Futura', 'Futura PT', 'Futura Std', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 200;
+    letter-spacing: 0.075em;
+  }
+
+  .font-futura-medium {
+    font-family: 'Montserrat', 'Futura', 'Futura PT', 'Futura Std', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+  }
+
+  /* Custom gradients */
+  .bg-orchestra-gradient {
+    background: var(--orchestra-gradient);
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Luxury animations enhanced by anime.js */
+  .animate-fade-in {
+    animation: luxuryFadeIn 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
+  .animate-slide-up {
+    animation: luxurySlideUp 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  }
+
+  .animate-scale-in {
+    animation: luxuryScaleIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+
+  @keyframes luxuryFadeIn {
+    from { 
+      opacity: 0; 
+      filter: blur(10px);
+    }
+    to { 
+      opacity: 1; 
+      filter: blur(0);
+    }
+  }
+
+  @keyframes luxurySlideUp {
+    from { 
+      opacity: 0; 
+      transform: translateY(60px) scale(0.95); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0) scale(1); 
+    }
+  }
+
+  @keyframes luxuryScaleIn {
+    from { 
+      opacity: 0; 
+      transform: scale(0.8) rotate(-5deg); 
+    }
+    50% {
+      transform: scale(1.05) rotate(2deg);
+    }
+    to { 
+      opacity: 1; 
+      transform: scale(1) rotate(0deg); 
+    }
+  }
+
+  /* Premium hover effects */
+  .hover-lift {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    filter: brightness(1.05);
+  }
+
+  /* Elegant button hover */
+  .btn-luxury {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .btn-luxury::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s;
+  }
+
+  .btn-luxury:hover::before {
+    left: 100%;
+  }
+
+  /* Full-screen no margins layout */
+  .fullscreen-layout {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    min-height: 100vh;
+  }
+
+  /* Editorial layout utilities */
+  .writing-mode-vertical-rl {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+
+  /* Minimal editorial spacing */
+  .editorial-spacing {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Full-bleed sections */
+  .full-bleed {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+  }
+}
+
+/* Squad Section Specific Styles */
+.squad-text-white {
+  color: #F5F5F5 !important; /* Always white in both themes */
+}
+
+/* CTA Section Button Specific Styles - REMOVIDO: Conflitava com modo escuro */
+
+/* Hero Section Title Specific Styles */
+.hero-title-text {
+  color: #F5F5F5 !important; /* Always white text for ORCHESTRA title */
+}
+
+@layer components {
+  /* Avatar Profile: cores específicas no MODO ESCURO */
+  .dark .avatar-profile .hero-title {
+    color: hsl(var(--accent)) !important; /* amarelo já usado no projeto */
+  }
+  .dark .avatar-profile .hero-subtitle {
+    color: #fff !important; /* branco no dark */
+  }
+}

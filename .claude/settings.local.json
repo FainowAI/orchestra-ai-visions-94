@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd:*)",
+      "Bash(rm:*)",
+      "Bash(npm install)",
+      "Bash(cd:*)",
+      "Bash(cd:*)",
+      "Bash(npm run typecheck:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm run:*)",
+      "Bash(npx tsc:*)",
+      "WebSearch"
+    ],
+    "deny": []
+  }
+}
