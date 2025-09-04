@@ -77,7 +77,7 @@ export const avatarMockData: AvatarData[] = [
   },
   {
     id: 4,
-    name: "Zack Blanco",
+    name: "Zack Blanc",
     slug: "zack",
     avatar_name: "zack",
     subtitle: "Avatar de IA | Lifestyle, Humor e Esportes Radicais",
